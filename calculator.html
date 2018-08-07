@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="calculator.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>javascript calculator</h1>
+    <div id="calculator">
+        <form>
+            <input style="font-size: 1.9em" type="text" id="screen" disabled>
+
+            <br>
+            <input type="button" value="C" id="keys" onclick="toscreen('C')">
+            <input type="button" value="CE " id="keys" onclick="backspace('')">
+            <input type="button" value="X^2" id="keys" onclick="power('')">
+            <input type="button" value="+" id="keys" onclick="toscreen('+')">
+            <br>
+            <input type="button" value="9" id="keys" onclick="toscreen('9')">
+            <input type="button" value="8" id="keys" onclick="toscreen('8')">
+            <input type="button" value="7" id="keys" onclick="toscreen('7')">
+            <input type="button" value="-" id="keys" onclick="toscreen('-')">
+            <br>
+            <input type="button" value="6" id="keys" onclick="toscreen('6')">
+            <input type="button" value="5" id="keys" onclick="toscreen('5')">
+            <input type="button" value="4" id="keys" onclick="toscreen('4')">
+            <input type="button" value="*" id="keys" onclick="toscreen('*')">
+
+            <br>
+            <input type="button" value="3" id="keys" onclick="toscreen('3')">
+            <input type="button" value="2" id="keys" onclick="toscreen('2')">
+            <input type="button" value="1" id="keys" onclick="toscreen('1')">
+            <input type="button" value="/" id="keys" onclick="toscreen('/')">
+            <br>
+            <input type="button" value="0" id="keys" onclick="toscreen('0')">
+            <input type="button" value="." id="keys" onclick="toscreen('.')">
+            <input type="button" value="=" id="equals" onclick="equal('c')">
+
+
+        </form>
+        <h3>Calculator</h3>
+    </div>box
+    <script type="text/javascript">
+        var box = document.getElementById('screen');
+        var inp = "";
+        function toscreen(x) {
+            // alert(x);
+            inp = inp + x;
+            if (x == "C") {
+                box.value = "";
+                inp = ""
+                return;
+            }
+
+            box.value = inp;
+
+        }
+
+
+        function equal() {
+            x = box.value
+            x = eval(x);
+            box.value = x;
+            inp = "";
+        }
+
+    </script>
+</body>
+
+
+</html>
